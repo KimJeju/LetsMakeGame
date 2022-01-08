@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <time.h>
 using namespace std;
 /*
 열거체 : 연속된 숫자에 이름을 부여할 수 있는 기능이다. 잘쓰면 코드도 이쁘고 편하게 짤수 있다.
@@ -17,12 +18,20 @@ enum NUM
 
 };
 
+enum SRP
+{
+	SRP_S = 1,
+	SRP_R,
+	SRP_P,
+	SRP_END
+};
+
 #define NUM_4 4//전처리기능자
 int main()
 {
 	/*
 	switch 문 : 분기문의 한 종류,if문을 조건을 체크하는 분기문이라면
-    switch 문은 값이 뭔지를 체키하는 분기문이다.
+	switch 문은 값이 뭔지를 체키하는 분기문이다.
 	형태 : switch(변수) {} 형태로 구성 , 코드블럭 안에는 case break 문으로 구분
 	case 상수 : 의 형태로 처리가 되고 변수값이 무엇인지에 따라서 case 뒤에 오는 상수를 비교하게 된다.
 	*/
@@ -33,19 +42,19 @@ int main()
 
 	switch (iNumber) {
 
-	case NUM_1 : //INumber 값이 무엇인지에 따라서 실행되는 case 구문이 결정된다
+	case NUM_1: //INumber 값이 무엇인지에 따라서 실행되는 case 구문이 결정된다
 		cout << "입력한 숫자는 1 입니다." << endl;
 		break; //break 를 만나게 되면 switch 문을 빠져나가게 된다.
 	case NUM_2:
 		cout << "입력한 숫자는 2 입니다." << endl;
 		// 브레이크가 없을 경우 바로 아래에 case 구문도 함께 실행된다.
-	case NUM_3 :
+	case NUM_3:
 		cout << "입력한 숫자는 3 입니다." << endl;
 		break;
-	case NUM_4 :
+	case NUM_4:
 		cout << "입력한 숫자는 4 입니다." << endl;
-	break;
-	default : // case 로 지정되어 있지 않은 숫자가 들어올 경우 실행된다 , if문 에서의 else와 같다.
+		break;
+	default: // case 로 지정되어 있지 않은 숫자가 들어올 경우 실행된다 , if문 에서의 else와 같다.
 		cout << "지정되지 않은 값 입니다" << endl;
 		break;
 	}
@@ -60,7 +69,29 @@ int main()
 	//sizeof(타입 or 변수) 를 하게 되면 타입 or 변수의 메모리 크기를 반환한다
 	cout << sizeof(NUM) << endl;
 	//typeid(타입 or 변수).name()를 하게되면 위에 typeid안에 들어간 타입 혹은 변수의 타입을 문자열로 반환해준다.
-	cout << typeid(NUM).name() << endl; 
+	cout << typeid(NUM).name() << endl;
+
+
+	/*
+	반복문 : 특정 작업을 반복해서 수행해주는 기능이다.
+	종류 : for, while, do while 3종류가 존재한다.
+	while(조건식) {}  의 형태로 구성된다.
+	while 문은 조건식을 체크해서 코드블럭 안에 코드가 true 일 경우 동작되고 다시 조건식을 체크한다. 조건식이 false가 되면 while문을 빠져나오게 된다.
+	반복문 안에서 break를 만나게 되면 해당 반복문에서 빠져나오게 된다.
+	*/
+
+	iNumber = 0;
+	while (iNumber < 10)
+	{
+		cout << iNumber << endl;
+		++iNumber; // 9까지 출력 후 빠져나옴
+
+		if (iNumber == 4)
+			break; // 4까지만 출력하고 빠져나옴
+	}
+	// 콘솔창을 지우는 명령어
+	system("cls");
+
 
 	return 0;
 }

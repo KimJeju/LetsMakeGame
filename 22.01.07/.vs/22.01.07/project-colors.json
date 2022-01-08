@@ -1,11 +1,11 @@
 {
   "Version": 1,
   "ProjectMap": {
-    "a3de32b3-97c9-4421-9483-9e5aa9aacc90": {
-      "ProjectGuid": "a3de32b3-97c9-4421-9483-9e5aa9aacc90",
-      "DisplayName": "Project3",
-      "ColorIndex": 0
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "기타 파일",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 0
 }
