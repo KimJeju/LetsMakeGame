@@ -1,6 +1,16 @@
 ﻿#include <iostream>
 using namespace std;
 
+struct _tagStudent
+{
+	int iKor;
+	int IEng;
+	int iMath;
+	int iTotal;
+	float fAvg;
+};
+
+
 int main()
 {
 	/*
@@ -64,6 +74,23 @@ int main()
 	cout << *pArray << endl;
 	cout << *(pArray + 2) << endl;
 	cout << *pArray + 100 << endl;
+
+	_tagStudent tStudent = {};
+
+	tStudent.iKor = 100;
+
+	_tagStudent* pStudent = &tStudent;
+
+	//연산자 우선순위 때문에 .을 먼저 인식하게 된다 메모리주소.은 졸못된 문법이다
+	//그러므로 *pStudent 를 ()로 감싸준 후에 .을 이용해서 가르키는 대상의 멤버 변수에 접근해야한다
+	(*pStudent).iKor = 50;
+
+	//메모리주소 -> 를 이용해서 가르키는 대상의 멤버에 접근할 수 있다.
+	pStudent->iKor = 80;
+
+	cout << tStudent.iKor << endl;
+
+
 	return 0;
 }
 
