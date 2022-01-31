@@ -37,6 +37,33 @@ int main()
 	cout << "pNum Value :" << pNum << endl;
 	cout << "pNum Address :" << &pNum << endl;
 
+	/*
+	포인터와 배열의 관계 : 배열명은 포인터다 << 완전 중요 , 배열명 자제차체가 해당 배열의
+						   시작점 주소를 의미한다.
+	*/
+
+	int iArray[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	cout << "iArray Address :" << iArray << endl;
+	cout << "iArray Address :" << &iArray[0] << endl;
+
+	int *pArray = iArray;
+
+	cout << pArray[2] << endl;
+
+	/*
+	포인터 연산 : +, - 연산을 제공한다. ++, -- 도 가능하지만 1을 증가하게되면
+				  단순히 메모리주소 값이 1증가하는 것이 아니다.
+				  int 포인터의 경우 int 타입에 메모리 주소를 갖게 되는데 메모리 주소에 1을 더해주면
+				  1증가가 아닌 가르키는 해당 포인터 타입의 변수타입 크기 만큼 증가하게 된다.
+				  int 포인터 이므로 int 의 크기인 4만큼 값이 증가하게 되는 것이다.
+	*/
+
+	cout << pArray << endl;
+	cout << pArray + 2 << endl;
+
+	cout << *pArray << endl;
+	cout << *(pArray + 2) << endl;
+	cout << *pArray + 100 << endl;
 	return 0;
 }
 
