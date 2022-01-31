@@ -18,8 +18,8 @@ int main()
 			 포인터 변수는 메모리 주소를 저장하게 된다. 모든 변수타입은 포인터 타입을
 			 선언할 수 있다. int변수 주소는 int 포인터 변수에 저장을 해야한다.
 			 포인터는 메모리 주소를 담아놓는 변수 이기 때문에 X86으로 개발할 때는 무조건 4byte가 나온다
-			 x64 일때는 8byte가 나온다. 
-	
+			 x64 일때는 8byte가 나온다.
+
 			포인터는 스스로 아무일도 할 수 없다. 반드시 다른 변수의 메모리 주소를 가지고 있어야 일을 할 수 있는데
 			가지고 있는 메모리 주소에 접근해서 값을 제어할 수 있다.
 	형태 : 변수타입 *변수명 : 형태로 선언
@@ -28,8 +28,8 @@ int main()
 	// 변수 선언시 ^을 붙여주면 해당 타입의 포인터 변수가 선언된다
 	// 변수 앞에 &을 붙여주면 해당 변수에 메모리 주소가 된다.
 	// pNum 은 iNumber 의 메모리 주소값을 가지게 된다. 그러므로 pNum을 이용해서 iNumber의 값을 제어할 수 있게 된 것이다.
-	int *pNum = &iNumber;
-	
+	int* pNum = &iNumber;
+
 
 	// int = 4byte || char = 1byte || double = 8byte 지만 포인터를 선언할시 모두 4byte가 출력된다, 메모리를 저장했기 떄문에
 	cout << sizeof(int*) << endl;
@@ -56,7 +56,7 @@ int main()
 	cout << "iArray Address :" << iArray << endl;
 	cout << "iArray Address :" << &iArray[0] << endl;
 
-	int *pArray = iArray;
+	int* pArray = iArray;
 
 	cout << pArray[2] << endl;
 
@@ -89,6 +89,23 @@ int main()
 	pStudent->iKor = 80;
 
 	cout << tStudent.iKor << endl;
+
+	// void : 타입이 없다. void의 포인터 타입을 활용할 수 있다.
+	// void* 변수를 선언하게 되면 이 변수는 어떤 타입의 메모리 주소든
+	// 모두 저장가능하다. 단, 역참조가 불가능하고 메모리 주소만 저장가능하다.
+	void* pVoid = &iNumber;
+
+
+	//*pVoid = 10; || 형 변환을 해줘야함
+	int* pConvert = (int*)pVoid;
+	*pConvert = 10101010;
+	*((int*)pVoid) = 9999;
+	cout << iNumber << endl;
+
+	cout << "iNumber Address :" << pVoid << endl;
+	pVoid = &tStudent;
+
+	cout << "tStudent Address :" << pVoid << endl;
 
 
 	return 0;
