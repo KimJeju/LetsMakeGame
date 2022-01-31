@@ -108,6 +108,31 @@ int main()
 	cout << "tStudent Address :" << pVoid << endl;
 
 
+	int iNumber1 = 1111;
+	iNumber = 2222;
+	pNum = &iNumber;
+
+	//이중 포인터  * 을 2개 붙인다. 일반포인터 변수가 일반 변수 메모리 주소를 저장하는 변수라면
+	//이중포인터는 포인터의 포인터이다, 즉 이중포인터는 포인터 변수의 메모리 주소를 저장하는 포인터 이다.
+	int** ppNum = &pNum;
+
+
+	*ppNum = &iNumber1;
+	*pNum = 3333;
+
+	cout << "iNumber1 :" << iNumber1 << endl;
+	cout << "iNumber :" << iNumber << endl;
+	cout << "iNumber Addr :" << &iNumber << endl;
+	cout << "pNum :" << *pNum << endl;
+	cout << "pNum Addr" << &pNum << endl;
+	cout << "pNum value :" << pNum << endl;
+	cout << "ppNum" << *ppNum << endl;
+	cout << "**ppNum : " << **ppNum << endl;
+	cout << "ppNum :" << ppNum << endl;
+	cout << "ppNum Addr :" << &ppNum << endl;
+
+
+
 	return 0;
 }
 
