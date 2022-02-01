@@ -131,7 +131,7 @@ int main()
 	cout << "ppNum :" << ppNum << endl;
 	cout << "ppNum Addr :" << &ppNum << endl;
 
-
+	//아 내일공부하자,,
 
 	return 0;
 }
