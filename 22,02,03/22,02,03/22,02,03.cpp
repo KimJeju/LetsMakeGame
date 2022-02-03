@@ -21,6 +21,7 @@ using namespace std;
 해당 함수를 호출하면 코드블럭 안에 코드가 동작이 된다.
 */
 
+//아래 함수 처럼 결과를 반환해주는 함수 형태를 Call by Value라 한다.
 int Sum(int a, int b)
 {
     //리턴 키워드를 이용해서 이 함수의 반환 타입에 맞는 값을 반환해야한다.
@@ -39,6 +40,12 @@ void Num(int iNumber)
     cout << "Number :" << iNumber << endl;
 }
 
+//아래 함수처럼 인자를 넘겨받게 될 경우
+void ChangeNumber(int iNumber)
+{
+    iNumber = 9999;
+}
+
 int main()
 {
     //함수를 호출할때는 함수면(인자로 넘겨줄값); 형태로 호출하게 된다.
@@ -49,6 +56,14 @@ int main()
 
     OutPutText();
     Num(12);
+
+
+    // 아래처럼 특정 코드블럭 안에서 선언되는 변수를 지역변수라  칭한다
+    // 지역변수는 메모리 영역중 stack에 할당된다.
+    int iNumber(0);
+    ChangeNumber(iNumber);
+
+    cout << iNumber << endl;
 
 
 	return 0;
