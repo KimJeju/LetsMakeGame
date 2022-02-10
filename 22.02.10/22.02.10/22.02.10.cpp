@@ -6,6 +6,7 @@ void Test(int** pp)
 {
 	*pp = new int;
 }
+
 int main()
 {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 
