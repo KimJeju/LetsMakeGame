@@ -94,6 +94,37 @@ typedef struct _tagPoint
         return result;
     }
 
+    _tagPoint operator +(const int a)
+    {
+        _tagPoint pt;
+        pt.x = x + a;
+        pt.y = y + a;
+    }
+
+    void operator << (_tagPoint& pt)
+    {
+        x = pt.x;
+        y = pt.y;
+    }
+
+    void operator >> ( _tagPoint& pt)
+    {
+        pt.x = x;
+        pt.y = y;
+    }
+
+    void operator ++()
+    {
+        ++x;
+        ++y;
+    }
+
+    void operator --()
+    {
+        --x;
+        --y;
+    }
+
 }PINOT, *PPOINT;
 
 ;
@@ -184,7 +215,15 @@ int main()
     // pt2를 인자로 넘겨준다
     pt3 = pt1 + pt2;
 
-    cout << "x :" << pt3.x << "y :" << pt3.y << endl;
+    pt3 << pt1;
+
+    pt2 >> pt3;
+
+    ++pt3;
+    
+    --pt3;
+
+    cout << "x :" << pt3.x << "\ty :" << pt3.y << endl;
 
     return 0;
 }
